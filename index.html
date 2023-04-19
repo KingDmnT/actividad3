@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Validacion de fomularios con JQuery</title>
     <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
-    <link href="style.css" rel="style" type="text/css">
+    <link href="style.css" rel="style">
 
 <script>
     var expr = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/;
@@ -12,7 +12,7 @@
     $(document).ready(function(){
         $("#bEnviar").click(function(){
             var nombre = $("#itNombre").val();
-            var email = $("#itEmail").val();
+            var correo= $("#itMail").val();
             var asunto = $("#itAsunto").val();
 
             if(nombre == ""){
@@ -20,14 +20,14 @@
                 return false;
             }else{
                 $("#mensaje1").fadeOut();
-                if(email == "" || !expr.test(email)){
-                    $("#mensaje2").fadeIn("slow");
-                    return false;
+                if(correo == "" || !expr.test(correo)){
+                    $("#mensaje2").fadeIn("");
+                    return true;
                 }else{
                     $("#mensaje2").fadeOut();
                     if(asunto == ""){
-                        $("#mensaje3").fadeIn("slow");
-                        return false;
+                        $("#mensaje3").fadeIn("");
+                        return true;
                     }else{
                         $("#mensaje3").fadeOut();
                     }
