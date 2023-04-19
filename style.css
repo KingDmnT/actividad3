@@ -1,7 +1,12 @@
+/*puede que vaja el siguiente inicio
+<style type="text/css"  */
+
+
+
 body{
-    background: url("patronFormulario.jpg");
-    padding-top : 100px; 
-}
+        background: url("archivosCSS/patronFormulario.jpg");
+        padding-top : 100px; 
+    }
 #container{
     -webkit-border-radius: 10px;
     -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.5);
@@ -17,6 +22,35 @@ body{
     margin: 0 auto;
     padding: 30px ;
     width: 350px;
-    /* vamos en el minuto 2:59*/
-    
+    /* vamos en el minuto 2:59*/   
 }
+
+.campo{
+    border: solid 4px #cece76;
+    font-size: 18px;
+    padding: 10px;
+    margin-bottom: 35px;
+    width: 300px; 
+}
+
+.boton{
+    background: #849175 ;
+    border: solid 0;
+    color: #fff;
+    padding: 10px;
+}
+
+.errores{
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    background: red;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    color: #fff;
+    display: none;
+    font-size: 14px;
+    margin-top: -80px;
+    margin-left: 340px;
+    padding: 10px;
+    position: absolute;
+}
+/* cierre de </style>*/
