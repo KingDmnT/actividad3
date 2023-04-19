@@ -4,10 +4,61 @@
     <meta charset="UTF-8">
     <title>Validacion de fomularios con JQuery</title>
     <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
-    <link rel="style" href="style.css">
+    <link href="style.css" rel="style" type="text/css">
+
+<script>
+    var expr = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/;
+
+    $(document).ready(function(){
+        $("#bEnviar").click(function(){
+            var nombre = $("#itNombre").val();
+            var email = $("#itEmail").val();
+            var asunto = $("#itAsunto").val();
+
+            if(nombre == ""){
+                $("#mensaje1").fadeIn();
+                return false;
+            }else{
+                $("#mensaje1").fadeOut();
+                if(email == "" || !expr.test(email)){
+                    $("#mensaje2").fadeIn("slow");
+                    return false;
+                }else{
+                    $("#mensaje2").fadeOut();
+                    if(asunto == ""){
+                        $("#mensaje3").fadeIn("slow");
+                        return false;
+                    }else{
+                        $("#mensaje3").fadeOut();
+                    }
+                }
+            }
+        });
+        });
+
+</script>
 
 </head>
 <body>
+    <div id="container">
+        <form id="miFormulario">
+                <label>*Nombre:</label><br />
+                <input type="text" id="itNombre" class="campo"/><br />
+                <div id="mensaje1" class="errores">Dame tu nombre</div>
+
+                <label>*Correo electronico:</label><br />
+                <input type="text" id="itemail" class="campo"/><br />
+                <div id="mensaje2" class="errores">Dame tu mail correcto</div>
+
+                <label >*Asunto:</label><br />
+                <input type="text" id="itAsunto" class="campo"/><br />
+                <div id="mensaje3" class="errores">Dame tu nombre</div>
+
+                
+                <input type="submit" value="Enviar datos" id="benviar"class="boton">
+            </form>
+        </div>
+    </div>
     
 </body>
 </html>
