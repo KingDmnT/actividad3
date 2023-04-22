@@ -6,7 +6,13 @@ $(document).ready(function(){
         var nombre = $("#itNombre").val();
         var correo= $("#itMail").val();
         var asunto = $("#itAsunto").val();
-
+        var rut = $("itRut").val();
+        
+        if(rut == ""){
+            $("#mensaje4").fadeIn();
+            return false;
+        }else{
+            $("#mensaje4").fadeOut();
         if(nombre == ""){
             $("#mensaje1").fadeIn();
             return false;
